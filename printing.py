@@ -5,14 +5,14 @@ from board import colors, pieces, getBoard
 
 print_white = lambda x: cprint( x, "white", "on_green" )
 print_black = lambda x: cprint( x, "grey", "on_green" )
-print_red = lambda x: cprint( x, "red", "on_cyan" )
+print_red = lambda x: cprint( x, "red" )
 print_info = lambda x: print( x )
 
 text_white = lambda x: colored( x, "white", "on_green" )
 text_black = lambda x: colored( x, "grey", "on_green" )
 text_info = lambda x: x 
 
-bgcol = "on_green" #Ugly
+bgcol = "on_green" #Ugly global code
 
 def text_board( x, col = "" ):
 	global bgcol
@@ -76,10 +76,10 @@ piecesPrint = {
 def printBoard():
 
 	text = ""
-	i = 0
+	i = 9
 	text += text_info( "  a b c d e f g h\n" )
 	for row in getBoard():
-		i += 1
+		i -= 1
 		text += text_info( str( i ) + " " )
 		for piece in row:
 			if piece == " ":

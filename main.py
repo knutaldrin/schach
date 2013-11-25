@@ -132,9 +132,9 @@ def main():
 def str2pos( string ):
 	string = string.lower()
 	y1 = ord( string[:1] ) - 97
-	x1 = int( string[1:2] ) - 1
+	x1 = 8 - int( string[1:2] )
 	y2 = ord( string[2:3] ) - 97
-	x2 = int( string[3:4] ) - 1
+	x2 = 8 - int( string[3:4] )
 	return [x1, y1], [x2, y2]
 	
 			
